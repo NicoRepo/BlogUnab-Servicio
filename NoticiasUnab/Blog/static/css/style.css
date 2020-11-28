@@ -1,6 +1,10 @@
-
 body{
-    background-color:#AD1F2B;
+    /* background-color:#AD1F2B; */
+  background-image: url("fondocolor.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .caja{
     padding: 38px;
@@ -12,11 +16,16 @@ form{
     border-radius: 10px;
     font-weight: 600;
 }
-.nav, img{
-    width: 20%;;
-    display: inline-block;
 
-}
+.nav, img{
+    background-size: cover;
+    position: relative;
+    left: 25%;
+    display: flex;
+    flex-flow: row;
+    width: 204px;
+    height: 82px;
+  }
 
 .todo{
     text-align: center;
@@ -25,8 +34,6 @@ form{
 /* .margen1{
     margin-top: 50px;
 } */
-
-
 
 .blog{
     background-color: white;
@@ -52,12 +59,13 @@ div .boton a:hover{
 }
 
 .text {
-    display: block;
-    width: 100px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+        width:99%;
+        height:50px;
+        color:black;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+    }
 
 .container--flex{
     display: flex;
@@ -72,7 +80,10 @@ div .boton a:hover{
     width: 49%;
 }
 .nav-link{
-    color: gray !important;
+    color: rgb(129, 127, 127) !important;
+    position: relative;
+    left: 1000px;
+    
 }
 h1{
     color: white;
@@ -85,6 +96,8 @@ h2{
 
 .separa{
     margin: 25px;
+    padding: 0;
+    border-radius: 15px;
 }
 
 /* .separabody{
@@ -93,16 +106,10 @@ h2{
     padding: 160px;
 } */
 
-.center{
-    text-align: center;
-    margin-top: 10px;
-}
 
 .del{
     color: black;
 }
-
-
 
 html{
 
@@ -123,6 +130,54 @@ html{
       left: 0;
       right: 0;
       height:30px;
-      background-color:white;
   }
-  
+  .loginn {
+      align-items: center;
+  }
+  nav
+  {
+      background-color: rgba(255, 255, 255, 0.877);
+  }
+
+  .card-text{
+    text-align: justify !important;
+    padding: 3px 10px;
+  border-top: rgba(12, 81, 126, 0.3) 1px solid;
+  border-bottom: rgba(12, 81, 126, 0.3) 1px solid;
+
+}
+  .card-fecha{
+      text-align: center;
+  }
+  .card-title{
+      text-align: center;
+      text-decoration: underline;
+      
+  }
+  .card-carrera{
+      text-align: center;
+  }
+ .card-autor{
+     text-align: center;
+ }
+ .card-body{
+    padding: 3px 10px;
+  border: rgba(12, 81, 126, 0.877) 5px solid;
+  border-radius: 15px;
+ }
+ .ajustin{
+     width: 100%;
+     text-align: center;
+     position: relative;
+     bottom: 0px;
+ }
+ .TituleUNAB{
+     text-align: center;
+ }
+ .row{
+     margin-left: 5%;
+     margin-bottom: 5%;
+ }
+.color-footer{
+    color: rgba(255, 255, 255, 0.658) ;
+}

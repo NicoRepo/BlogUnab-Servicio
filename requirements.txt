@@ -4,3 +4,7 @@ gunicorn
 django-ckeditor
 django-braces
 django-microsoft-auth
+requests_oauthlib
+pyyaml
+python-dateutil
+mysql-connector-python

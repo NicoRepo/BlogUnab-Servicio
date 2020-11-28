@@ -17,7 +17,7 @@ class Carrera(models.Model):
 #MODELO DE NOTICIA
 class Blog(models.Model):
     autor_id = models.ForeignKey(User, on_delete = models.CASCADE)
-    titulo = models.CharField(max_length=35, blank = False, null = False)
+    titulo = models.CharField(max_length=50, blank = False, null = False)
     cuerpo = RichTextField()
     fecha = models.DateField(auto_now_add=True)
     carrera = models.CharField(max_length=50, default='General')
@@ -27,7 +27,7 @@ class Blog(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('blog_detalle', args=str(self.id))
-        
+
 #MODELO DE COMENTARIO
 class Comentario(models.Model):
     blog = models.ForeignKey(Blog, related_name="comentario", on_delete=models.CASCADE)

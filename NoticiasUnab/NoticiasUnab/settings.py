@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'Blog',
     'ckeditor',
     'usuarios',
+    'tutorial',
 ]
 
-SITE_ID = 4
+
+SITE_ID =1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -93,9 +95,21 @@ WSGI_APPLICATION = 'NoticiasUnab.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+#    'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': str(BASE_DIR / 'db.sqlite3'),
+#     }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
+      'ENGINE': 'mysql.connector.django',
+      'NAME': 'grupo03',
+      'USER': 'grupo03',
+      'PASSWORD': '198914177',
+      'DEFAULT-CHARACTER-SET': 'utf8',
+      'HOST': 'grupo03.c5d4mi2dthpc.us-east-1.rds.amazonaws.com ',
+      'PORT': '3306',
+      'TEST': {
+        'NAME': 'grupo03_test'
+      }
     }
 }
 
@@ -139,3 +153,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+
+CKEDITOR_CONFIGS = { 
+    'default': {
+        'entities': False
+    },
+ }

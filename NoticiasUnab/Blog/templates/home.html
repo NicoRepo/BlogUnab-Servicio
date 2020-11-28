@@ -2,21 +2,22 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="center">Noticias UNAB</h1>
+    <div class = "TituleUNAB"><h1 class="center">Noticias UNAB</h1></div>
     <div class="container center">
-        <div class="row">
+      <div class="row">
         {% for blog in object_list %}
-            <div class="col-3 card separa">
-                <div class="card-body">
-                    <h3 class="card-title" >{{blog.titulo}}</h3>
-                    <small >Carrera - <a href="{% url 'carreras' blog.carrera %}">{{blog.carrera}}</a> </small>
-                    <p class="card-text text">{{ blog.cuerpo|striptags }}</p>
-                    <a href="{% url 'blog_detalle' blog.pk %}" class="card-link btn btn-primary">Detalle</a>
-                </div>
-            </div>    
-        {% endfor %}
+        <div class="col-5 card separa">
+          <div class="card-body">
+            <h3 class="card-title" >{{blog.titulo}}</h3>
+            <p class ="card-carrera" ><small>Carrera: <a href="{% url 'carreras' blog.carrera %}">{{blog.carrera}}</a></small></p>
+            <p class="card-text text">{{ blog.cuerpo|striptags}}</p>
+            <p class="card-autor"><small>Autor: {{blog.autor_id.first_name}} {{blog.autor_id.last_name}}</small></p>
+            <p class="card-fecha"><small>{{ blog.fecha }}</small></p>
+            <div class= "ajustin"><a href="{% url 'blog_detalle' blog.pk %}" class="card-link btn btn-primary">Detalle</a></div>
+          </div>
         </div>
-    </div>
-    
+        {% endfor %}
+      </div>
+    </div> 
 </div>
 {% endblock %}

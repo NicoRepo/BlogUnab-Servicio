@@ -52,7 +52,6 @@ class CrearBlog(LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
         return context
 
 
-
 class CrearCarrera(LoginRequiredMixin, CreateView):
     model = Carrera
     #form_class = BlogForm
@@ -74,13 +73,6 @@ class EditarBlog(LoginRequiredMixin, UpdateView):
         context = super(EditarBlog, self).get_context_data(*args, **kwargs)
         context["carr_menu"] = carr_menu
         return context
-
-    #OBTENER PK DE LA NOTICIA ORIGINAL
-    def get_success_url(self):
-        #Para hacer la redireccion al momento de comentar una noticia nececitamos el metodo para obtener la PK de la noticia asociada
-        blog=self.kwargs['pk']
-        return reverse_lazy('blog_detalle', kwargs={'pk': blog})
-
 
 class BorrarBlog(LoginRequiredMixin ,DeleteView):
     model = Blog
