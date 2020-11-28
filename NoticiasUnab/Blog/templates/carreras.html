@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+
+    <h1 class="center">{{carreras}}</h1>
+    
+    {% if user.is_authenticated %}
+        <div class="container center">
+            <a href="{% url 'crear_blog' %}" class="btn btn-success" role="button">Noticia Nueva</a>
+        </div>
+    {% endif %}
+
+    <div class="container center">
+        <div class="row">
+        {% for blog in carrera_noticias %}
+            <div class="col-3 card separa">
+                <div class="card-body">
+                    <h3 class="card-title">{{blog.titulo}}</h3>
+                    <p class="card-text text">{{ blog.cuerpo|striptags }}</p>
+                    <a href="{% url 'blog_detalle' blog.pk %}" class="card-link btn btn-info">Detalle</a>
+                </div>
+            </div>    
+        {% endfor %}
+        </div>
+    </div>
+    <div class="boton">
+    <a href="{% url 'home' %}" class="btn btn-primary" >Volver a Inicio</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="center">Noticias UNAB</h1>
+
+
+    <div class="container center">
+        <div class="row">
+        {% for carrera in object_list %}
+            <div class="col-3 card separa">
+                <div class="card-body">
+                    <h3 class="card-title" >{{carrera.nombre}}</h3>
+                    <a href="{% url 'carreras' carrera.nombre %}" class="card-link btn btn-secondary">Ver Carrera</a>
+                </div>
+            </div>    
+        {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

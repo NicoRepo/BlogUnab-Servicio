@@ -1,0 +1,128 @@
+
+body{
+    background-color:#AD1F2B;
+}
+.caja{
+    padding: 38px;
+    text-align: center;
+}
+form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.nav, img{
+    width: 20%;;
+    display: inline-block;
+
+}
+
+.todo{
+    text-align: center;
+}
+
+/* .margen1{
+    margin-top: 50px;
+} */
+
+
+
+.blog{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: black 0px 0px 5px 2px;
+}
+
+.boton{
+    padding: 10px;
+    text-align: center;
+}
+
+div .boton a:hover{
+    transition-delay: 300ms;
+    background-color: gray;
+    
+}
+
+div .boton a:hover{
+    transition-delay: 300ms;
+    font-weight: bold;
+    
+}
+
+.text {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.column{
+    width: 100%;
+}
+.column--50{
+    width: 49%;
+}
+.nav-link{
+    color: gray !important;
+}
+h1{
+    color: white;
+}
+
+h2{
+    color: white;
+    text-align: right;
+}
+
+.separa{
+    margin: 25px;
+}
+
+/* .separabody{
+    margin: auto;
+    width: 100%;
+    padding: 160px;
+} */
+
+.center{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.del{
+    color: black;
+}
+
+
+
+html{
+
+    position:relative; 
+    min-height: 100%;
+  }
+  /*Normalize html and body elements,this style is just good to have*/
+  html,body{
+    margin:0;
+    padding:0;
+  }
+  .pageContentWrapper{
+    margin-bottom:100px;/* Height of footer*/
+  } 
+  .footer{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height:30px;
+      background-color:white;
+  }
+  

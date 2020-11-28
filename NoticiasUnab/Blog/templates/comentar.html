@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Comentar{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container caja">
+        <div class="form-group">
+            <h1>Comentar</h1>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+                {{comentario.blog}}
+                <button type="submit" class="btn btn-success">Comentar</button>
+            
+            </form>
+        </div>
+    </div> 
+    <script>var name = "{{user.first_name}}";
+            document.getElementById("nombre").value = name;
+    </script>
+{% else %}
+    <div class="container caja">
+        <div class="form-group">
+            <h1>No tienes permiso para acceder acá....</h1>
+
+                <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+            
+            </form>
+        </div>
+    </div> 
+{% endif %}
+
+
+{% endblock %}

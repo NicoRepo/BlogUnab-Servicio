@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Crear Carrera{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container caja">
+        <div class="form-group">
+            <h1>Crear Carrera</h1>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            
+            </form>
+        </div>
+    </div> 
+{% else %}
+    <div class="container caja">
+        <div class="form-group">
+            <h1>No tienes permiso para acceder acá....</h1>
+
+                <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+            
+            </form>
+        </div>
+    </div> 
+{% endif %}
+
+
+{% endblock %}

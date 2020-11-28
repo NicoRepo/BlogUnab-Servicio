@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Iniciar Sesion{% endblock %}
+{% block content %}
+<div class="container caja">
+    <div class="form-group">
+        <h1>Iniciar Sesion</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        
+        </form>
+    </div>
+</div> 
+
+{% endblock %}

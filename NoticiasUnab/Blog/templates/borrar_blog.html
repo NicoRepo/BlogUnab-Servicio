@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Eliminar Noticia{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.id == blog.autor_id.id %}
+        <div class="container caja">
+            <div class="form-group">
+                <h1>Eliminar: {{blog.titulo}}</h1>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <p class="lead  del">{{blog.cuerpo|safe}}</p>
+                    <strong>¿Estas seguro?</strong><br/><br/>
+                    <button type="submit" class="btn btn-danger">Eliminar!</button>
+                
+                </form>
+            </div>
+        </div> 
+    {% else %}    
+        <div class="container caja">
+            <div class="form-group">
+                <h1>No eres el autor de esta noticia...</h1>
+
+                    <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+                
+                </form>
+            </div>
+        </div> 
+    {% endif %}
+
+{% else %}
+<div class="container caja">
+    <div class="form-group">
+        <h1>No tienes permiso para acceder acá....</h1>
+
+            <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+        
+        </form>
+    </div>
+</div> 
+{% endif %}
+{% endblock %}

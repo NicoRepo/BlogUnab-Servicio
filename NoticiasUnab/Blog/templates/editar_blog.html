@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Editar Noticia{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+
+    {% if user.id == blog.autor_id.id %}
+        <div class="container caja">
+            <div class="form-group">
+                <h1>Editar Noticia</h1>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <a href="{% url 'carreras' blog.carrera %}" class="btn btn-primary">Volver</a>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                
+                </form>
+            </div>
+        </div> 
+    {% else %}
+        <div class="container caja">
+            <div class="form-group">
+                <h1>No eres el autor de esta noticia...</h1>
+
+                    <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+                
+                </form>
+            </div>
+        </div> 
+    {% endif %}
+
+{% else %}
+    <div class="container caja">
+        <div class="form-group">
+            <h1>No tienes permiso para acceder acá....</h1>
+
+                <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+
+            
+            </form>
+        </div>
+    </div> 
+{% endif %}
+{% endblock %}

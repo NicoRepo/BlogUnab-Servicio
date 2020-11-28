@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{blog.titulo}}{% endblock %}
+{% block content %}
+
+<div class="container caja">
+    <ul>
+        <div class="blog">
+                <h1 class="display-5 del">{{blog.titulo}}</h1>
+                <small>Escrito por: {{ blog.autor_id.first_name }} {{blog.autor_id.last_name}} - {{blog.fecha}}</small>
+                <hr>
+                <p class="lead del">{{blog.cuerpo|safe}}</p>
+                <div class="boton">
+
+                    {% if user.is_authenticated %}
+                        {% if user.id == blog.autor_id.id %}
+                            <a href="{% url 'editar_blog' blog.pk %}" class="btn btn-success" role="button">Editar</a>
+                            <a href="{% url 'borrar_blog' blog.pk %}" class="btn btn-danger" role="button">Eliminar</a>
+                        {% endif %}
+                    {% endif %}
+
+
+                    <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+                </div>
+                
+            
+        </div>
+    </ul>
+    
+</div>
+<br/><br/>
+<div class="container caja">
+    <ul>
+        <div class="blog">
+            <hr>
+            <h1 class="display-5 del">Comentarios</h1>
+
+            <br/>
+
+<!-- BLOQUE DE COMENTARIO -->
+
+            {% if not blog.comentario.all %}
+                Aún no hay comentarios...
+                <br/><br/>
+            {% else %}
+                {% for comentario in blog.comentario.all %}
+                <hr>
+                    <strong>
+                        {{ comentario.nombre }}
+                        {{ comentario.fecha }}
+                    </strong>
+                    <br/>
+                    {{ comentario.cuerpo|safe }}
+                
+                {% endfor %}
+            {% endif %}
+
+<!-- FIN BLOQUE -->
+
+            <a href="{% url 'comentar' blog.pk %}" class="btn btn-success" role="button">Comentar</a>
+            <br/><br/>
+        </div>
+    </ul>
+</div>
+{% endblock %}

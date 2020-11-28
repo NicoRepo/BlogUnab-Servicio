@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h1 class="center">Noticias UNAB</h1>
+    <div class="container center">
+        <div class="row">
+        {% for blog in object_list %}
+            <div class="col-3 card separa">
+                <div class="card-body">
+                    <h3 class="card-title" >{{blog.titulo}}</h3>
+                    <small >Carrera - <a href="{% url 'carreras' blog.carrera %}">{{blog.carrera}}</a> </small>
+                    <p class="card-text text">{{ blog.cuerpo|striptags }}</p>
+                    <a href="{% url 'blog_detalle' blog.pk %}" class="card-link btn btn-primary">Detalle</a>
+                </div>
+            </div>    
+        {% endfor %}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
