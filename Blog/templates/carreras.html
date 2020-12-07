@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <div class = "TituleUNAB"><h1 class="center">{{carreras}}</h1></div>
+  <div id="logreg-forms">
+    <div class = "TituleUNAB"><h1 class="display-4 center"><p class="font-weight-bold">{{carreras}}</p></h1></div>
+  </div>
     {% if user.is_authenticated %}
-      <div class="TituleUNAB">
-        <a href="{% url 'crear_blog' %}" class="btn btn-success" role="button">Noticia Nueva</a>
-      </div>
     {% endif %}
     <div class="container center">
       <div class="row">

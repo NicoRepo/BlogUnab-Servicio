@@ -23,8 +23,9 @@ class VistaHome(LoginRequiredMixin, ListView):
 @login_required(login_url='/usuarios/login/')
 def CarreraView(request, carreras):
     #REPARAR NOMBRE DE URL*
+    carr_menu = Carrera.objects.all()
     carrera_noticias = Blog.objects.filter(carrera=carreras.replace('-', ' '))
-    return render(request, 'carreras.html', {'carreras': carreras.title().replace('-', ' '), 'carrera_noticias': carrera_noticias})
+    return render(request, 'carreras.html', {'carreras': carreras.title().replace('-', ' '), 'carrera_noticias': carrera_noticias, 'carr_menu': carr_menu})
 
 class BlogDetalle(LoginRequiredMixin , DetailView):
     model = Blog

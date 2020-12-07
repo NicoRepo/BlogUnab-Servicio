@@ -27,14 +27,14 @@ class RegistroUser(UserCreationForm):
         }        
 
 class UserLoginForm(AuthenticationForm):
-    def init(self, args, **kwargs):
-        super(UserLoginForm, self).init(args, **kwargs)
-    username = forms.EmailField(widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': '', 'id': 'hello'}))
-    password = forms.CharField(widget=forms.PasswordInput(
-        attrs={
-            'class': 'form-control',
-            'placeholder': '',
-            'id': 'hi',
-        }
+  def __init__(self, *args, **kwargs):
+    super(UserLoginForm, self).__init__(*args, **kwargs)
+  username = forms.CharField(widget=forms.TextInput(
+  attrs={'class': 'form-control', 'placeholder': 'Usuario', 'id': 'hello'}))
+  password = forms.CharField(widget=forms.PasswordInput(
+  attrs={
+      'class': 'form-control',
+      'placeholder': '',
+      'id': 'hi',
+  }
 ))

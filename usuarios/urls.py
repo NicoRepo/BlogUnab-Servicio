@@ -2,6 +2,7 @@ from django.urls import path
 from .views import RegistrarUsuario
 from django.contrib.auth import views
 from .forms import UserLoginForm
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('registrar/', RegistrarUsuario.as_view(), name='registrar'),

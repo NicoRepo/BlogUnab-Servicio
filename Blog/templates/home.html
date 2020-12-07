@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-    <div class = "TituleUNAB"><h1 class="center">Noticias UNAB</h1></div>
+<div class="container"></div>
+  <div id="logreg-forms">
+    <div class = "TituleUNAB"><h1 class="display-4 center"><p class="font-weight-bold">Noticias</p></h1></div>
+  </div>
     <div class="container center">
       <div class="row">
         {% for blog in object_list %}

@@ -8,3 +8,5 @@ requests_oauthlib
 pyyaml
 python-dateutil
 mysql-connector-python
+django-cors-headers
+coverage

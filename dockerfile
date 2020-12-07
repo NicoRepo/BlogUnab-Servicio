@@ -4,11 +4,11 @@ ENV DJANGO_SETTINGS_MODULE NoticiasUnab.production
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir NoticiasUnab
+RUN mkdir BlogUnab-Servicio
 
-WORKDIR /NoticiasUnab
+WORKDIR /BlogUnab-Servicio
 
-ADD . /NoticiasUnab
+ADD . /BlogUnab-Servicio
 
 RUN ./setup.sh
 
